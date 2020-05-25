@@ -66,7 +66,7 @@ var debug = process.env
  * @param {Object} config
  * @api public
  */
-module.exports = function canihazitplxktnxilubai(config) {
+function canihazitplxktnxilubai(config) {
   config = config || {};
 
   var configuration = {
@@ -209,6 +209,13 @@ module.exports = function canihazitplxktnxilubai(config) {
 
   return has;
 };
+
+/**
+ * Wrap canihazitplxktnxilubai inside install function to simplify stubbing via Sinon.
+ * 
+ * @api public
+ */
+module.exports.install = canihazitplxktnxilubai;
 
 /**
  * Expose the queue so we can do some testing against it.
